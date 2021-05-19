@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Producto</title>
+</head>
+<body>	
+	Producto agregado correctamente
+	
+	<h1>Menu</h1>
+	
+	<ul>
+		<li><a href="ultimo">ultimo producto</a></li>
+		<li><a href="volver">volver</a></li>
+	</ul>
+<h3>Lista de Productos</h3><br>
+			<div>
+				<table>
+				    <tr>
+				      <th>Cod Producto</th>
+				      <th>Nombre</th>
+				      <th>Precio</th>
+				      <th>Marca</th>
+				      <th>Stock</th>				      
+				    </tr>
+					<!-- productos viene de la capa controller en el model.addtribute -->
+					<tr th:each="p : ${productos}">
+						<td th:text="${p.codigo}"></td>
+						<td th:text="${p.nombre}"></td>
+						<td th:text="${p.precio}"></td>
+						<td th:text="${p.marca}"></td>
+						<td th:text="${p.stock}"></td>						
+					</tr>
+				</table>
+			</div>
+</body>
+</html>
